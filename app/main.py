@@ -1,39 +1,61 @@
 from flask import Flask
 from flask import request
-# Pickle package
-import pickle
-# from ML.test_model import irrigate_or_not_irrigate
-
 from flask_cors import CORS
+import pickle
+
 app = Flask(__name__)
 
-# enable cors 
+# enable cors
 CORS(app)
 
 
-# load the model from disk
-irrigation_model = './ml_models/irrigation_model.sav'
-loaded_model = pickle.load(open(irrigation_model, 'rb'))
+# load the models from disk
+irrigation_model_filename = './ml_models/irrigation_model.sav'
+radiation_model_filename = './ml_models/radiation_model.sav'
 
-def irrigate_or_not_irrigate(soil_moisture):
-    if(loaded_model.predict([[soil_moisture]]))==0:
-        return 'Irrigate'
-    else:
-        return 'Not irrigate'
+# load models using pickle
+loaded_model_irrigation = pickle.load(open(irrigation_model_filename, 'rb'))
+loaded_model_radiation = pickle.load(open(radiation_model_filename, 'rb'))
 
 
 @app.route("/")
 def home_view():
-        return {
-            "api_status": "Up and running"
-        }
+    return {
+        "api_status": "Up and running"
+    }
 
 
 # Irrigation model api endpoint http://127.0.0.1:8000/api/model/irrigation
 @app.post('/api/model/irrigation')
 def predict():
-        soil_moisture = request.form.get('soil_moisture')
-        predictions = irrigate_or_not_irrigate(int(soil_moisture))
-        return {
-            "predictions": predictions
-        }
+    def irrigate_or_not_irrigate(soil_moisture):
+        if (loaded_model_irrigation.predict([[soil_moisture]])) == 0:
+            return 'Irrigate'
+        else:
+            return 'Not irrigate'
+
+    soil_moisture = request.form.get('soil_moisture')
+    predictions = irrigate_or_not_irrigate(int(soil_moisture))
+
+    # response
+    return {
+        "predictions": predictions
+    }
+
+
+# Radiation model api endpoint http://127.0.0.1:8000/api/model/radiation
+@app.post('/api/model/radiation')
+def predict():
+    first_interval = request.form.get('first_interval')
+    second_interval = request.form.get('sec_interval')
+    third_interval = request.form.get('third_interval')
+
+    actual_solar_radiation = array(
+        [float(first_interval), float(second_interval), float(third_interval)])
+    actual_solar_radiation = actual_solar_radiation.reshape((1, 3, 1))
+    predictions = loaded_model_radiation.predict(actual_solar_radiation)
+
+    # response
+    return {
+        "predictions": predictions.tolist()
+    }
