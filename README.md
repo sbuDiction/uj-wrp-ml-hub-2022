@@ -31,7 +31,7 @@ Make the script executable with
   chmod +x run.sh
 ```
 
-Run the script using
+Start the server
 
 ```bash
   ./run.sh
