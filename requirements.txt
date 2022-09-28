@@ -4,3 +4,4 @@ numpy
 sklearn
 gunicorn
 flask-cors
+keras
