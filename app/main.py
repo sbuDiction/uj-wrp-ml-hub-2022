@@ -3,8 +3,12 @@ from flask import request
 # Pickle package
 import pickle
 # from ML.test_model import irrigate_or_not_irrigate
+
+from flask_cors import CORS
 app = Flask(__name__)
 
+# enable cors 
+CORS(app)
 
 
 # load the model from disk
