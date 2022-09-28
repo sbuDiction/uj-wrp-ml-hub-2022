@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask_cors import CORS
+from numpy import array
 import pickle
 
 app = Flask(__name__)
@@ -25,17 +26,23 @@ def home_view():
     }
 
 
+def irrigate_or_not_irrigate(soil_moisture):
+    if (loaded_model_irrigation.predict([[soil_moisture]])) == 0:
+        return 'Irrigate'
+    else:
+        return 'Not irrigate'
+
+
 # Irrigation model api endpoint http://127.0.0.1:8000/api/model/irrigation
 @app.post('/api/model/irrigation')
-def predict():
-    def irrigate_or_not_irrigate(soil_moisture):
-        if (loaded_model_irrigation.predict([[soil_moisture]])) == 0:
-            return 'Irrigate'
-        else:
-            return 'Not irrigate'
-
+def irrigation():
+    predictions = ''
     soil_moisture = request.form.get('soil_moisture')
-    predictions = irrigate_or_not_irrigate(int(soil_moisture))
+
+    if (loaded_model_irrigation.predict([[soil_moisture]])) == 0:
+        predictions = 'Irrigate'
+    else:
+        predictions = 'Not irrigate'
 
     # response
     return {
@@ -45,7 +52,7 @@ def predict():
 
 # Radiation model api endpoint http://127.0.0.1:8000/api/model/radiation
 @app.post('/api/model/radiation')
-def predict():
+def radiation():
     first_interval = request.form.get('first_interval')
     second_interval = request.form.get('sec_interval')
     third_interval = request.form.get('third_interval')

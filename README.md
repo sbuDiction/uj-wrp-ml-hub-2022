@@ -24,10 +24,17 @@ Clone this repository
 * Create an .env file in your project root folder and add your variables. See .env.sample for assistance. -->
 
 ### Usage
-<!-- Start the server -->
+
+Make the script executable with
 
 ```bash
-  flask --app main --debug run
+  chmod +x run.sh
+```
+
+Run the script using
+
+```bash
+  ./run.sh
 ```
 
 <!-- * Run npm start:dev to start the application.
@@ -43,9 +50,11 @@ Clone this repository
 ### Technologies Used
 
 - [Flask](https://nodejs.org/) is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.
+- [Gunicorn](https://gunicorn.org/) The Gunicorn "Green Unicorn" is a Python Web Server Gateway Interface HTTP server. It is a pre-fork worker model, ported from Ruby's Unicorn project.
+- [scikit-learn](https://scikit-learn.org/stable/) Scikit-learn is a free software machine learning library for the Python programming language.
 
-<!-- ### Authors
+  <!-- ### Authors
+  - [Black Developa](https://github.com/blackdevelopa)
 
-- [Black Developa](https://github.com/blackdevelopa)
-- ![alt text](https://avatars0.githubusercontent.com/u/29962968?s=400&u=7753a408ed02e51f88a13a5d11014484bc4d80ee&v=4)
+<!-- - ![alt text](https://avatars0.githubusercontent.com/u/29962968?s=400&u=7753a408ed02e51f88a13a5d11014484bc4d80ee&v=4)
   -->
