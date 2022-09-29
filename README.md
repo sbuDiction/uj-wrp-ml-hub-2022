@@ -59,13 +59,15 @@ Start the server
       <td> HTTP Verbs </td>
       <td> Endpoints </td>
       <td> FormData fields </td>
+      <td> Action </td>
     </tr>
   <tr>
       <td> POST </td>
+      
   <td>
    
    `/api/model/irrigation`
-  <td>
+  </td>
 
 <td>
 
@@ -76,6 +78,10 @@ Start the server
 ```
 
   </td>
+
+  <td>
+  Content to be adde...
+  </td>
 </tr>
 
 <tr>
@@ -83,7 +89,7 @@ Start the server
   <td>
    
    `/api/model/radiation`
-  <td>
+  </td>
 
 <td>
 
@@ -95,6 +101,9 @@ Start the server
 }
 ```
 
+  </td>
+  <td>
+  Content to be adde...
   </td>
 </tr>
 </table>
