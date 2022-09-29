@@ -2,15 +2,14 @@
 
 ### Introduction
 
-UJ WRP Machine Learning Hub 2022 is an open source api that enable students to deploy their machine learning models for thier capstone projects. The perpose of this repository is to allow each team to add their saved **ml** model from eaither **Jupiter Notebook** or **Google Colab**. 
-
+UJ WRP Machine Learning Hub 2022 is an open source api that enable students to deploy their machine learning models for thier capstone projects. The perpose of this repository is to allow each team to add their saved **ml** model from eaither **Jupiter Notebook** or **Google Colab**.
 
 ## Table of contents
 
-* [Installation](#Installation)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Endpoints](#Endpoints)
+- [Installation](#Installation)
+- [Usage](#usage)
+- [Endpoints](#Endpoints)
+- [Authors](#authors)
 
 <!-- ### Project Support Features
 * Users can signup and login to their accounts
@@ -29,13 +28,11 @@ Clone this repository
   git clone https://github.com/sbuDiction/uj-wrp-ml-hub-2022.git
 ```
 
-<!-- * Clone this repository [here](https://github.com/blackdevelopa/ProjectSupport.git).
-* The develop branch is the most stable branch at any given time, ensure you're working from it.
-* Run npm install to install all dependencies
-* You can either work with the default mLab database or use your locally installed MongoDB. Do configure to your choice in the application entry file.
-* Create an .env file in your project root folder and add your variables. See .env.sample for assistance. -->
+Go to the project directory
 
-### Usage
+```bash
+  cd uj-wrp-ml-hub-2022
+```
 
 Make the script executable with
 
@@ -49,15 +46,96 @@ Start the server
   ./run.sh
 ```
 
-<!-- * Run npm start:dev to start the application.
-* Connect to the API using Postman on port 7066. -->
-
 ### Endpoints
 
-| HTTP Verbs | Endpoints               | Action                |
-| ---------- | ----------------------- | --------------------- |
-| `POST`     | `/api/model/irrigation` | To predict irrigation |
-| `POST`     | `/api/model/radiation`  | To predict radiaion   |
+<!--
+| HTTP Verbs | Endpoints               | FormData fields | Action                              |
+| ---------- | ----------------------- | --------------- | ----------------------------------- |
+| `POST`     | `/api/model/irrigation` |                 | content to be added by team members |
+| `POST`     | `/api/model/radiation`  |                 | content to be added by team members | -->
+
+<table>
+    <tr>
+      <td> HTTP Verbs </td>
+      <td> Endpoints </td>
+      <td> FormData fields </td>
+    </tr>
+  <tr>
+      <td> POST </td>
+  <td>
+   
+   `/api/model/irrigation`
+  <td>
+
+<td>
+
+```json
+{
+  "soil_moisture": value
+}
+```
+
+  </td>
+</tr>
+
+<tr>
+      <td> POST </td>
+  <td>
+   
+   `/api/model/radiation`
+  <td>
+
+<td>
+
+```json
+{
+  "first_interval": value,
+  "sec_interval": value,
+  "third_interval": value
+}
+```
+
+  </td>
+</tr>
+</table>
+
+### Usage
+
+You can post axios data by using `FormData()` like:
+
+```javascript
+// This example is using the radiation model demonstration perposes
+let bodyFormData = new FormData()
+```
+
+And then add the fields to the form you want to send:
+
+```javascript
+// This example is using the radiation model demonstration perposes
+bodyFormData.append('first_interval', 380)
+bodyFormData.append('sec_interval', 378)
+bodyFormData.append('third_interval', 379)
+```
+
+And then you can use axios `POST` method (You can amend it accordingly)
+
+```javascript
+// This example is using the radiation model demonstration perposes
+axios({
+  method: 'post',
+  url: 'uj-wrp-ml-hub-api.herokuapp.com/api/model/radiation',
+  data: bodyFormData,
+  headers: { 'Content-Type': 'multipart/form-data' }
+})
+  .then(response => {
+    //handle success
+    console.log(response.data)
+  })
+  .catch(response => {
+    //handle error
+    console.log(response.data)
+  })
+```
 
 ### Technologies Used
 
@@ -67,8 +145,10 @@ Start the server
 
 - [tensorflow-cpu 2.10.0](https://pypi.org/project/tensorflow-cpu/) TensorFlow is an open source software library for high performance numerical computation. Its flexible architecture allows easy deployment of computation across a variety of platforms (CPUs, GPUs, TPUs), and from desktops to clusters of servers to mobile and edge devices.
 
-  <!-- ### Authors
+  ### Authors
+
   - [Black Developa](https://github.com/blackdevelopa)
 
-<!-- - ![alt text](https://avatars0.githubusercontent.com/u/29962968?s=400&u=7753a408ed02e51f88a13a5d11014484bc4d80ee&v=4)
-  -->
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/WLk8YgE2N4mB2/giphy.gif" width="100%"/>
+</div>
