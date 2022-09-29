@@ -59,7 +59,8 @@ Start the server
       <td> HTTP Verbs </td>
       <td> Endpoints </td>
       <td> FormData fields </td>
-      <td> Action </td>
+      <td> Actions </td>
+      <td> Groups </td>
     </tr>
   <tr>
       <td> POST </td>
@@ -80,7 +81,10 @@ Start the server
   </td>
 
   <td>
-  Content to be adde...
+  Content to be added...
+  </td>
+   <td>
+  Content to be added...
   </td>
 </tr>
 
@@ -103,7 +107,10 @@ Start the server
 
   </td>
   <td>
-  Content to be adde...
+  Content to be added...
+  </td>
+   <td>
+  Content to be added...
   </td>
 </tr>
 </table>
