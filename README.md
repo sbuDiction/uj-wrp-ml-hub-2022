@@ -2,14 +2,26 @@
 
 ### Introduction
 
-UJ WRP Machine Learning Hub 2022 is an open source api that enable students to..
+UJ WRP Machine Learning Hub 2022 is an open source api that enable students to deploy their machine learning models for thier capstone projects. The perpose of this repository is to allow each team to add their saved **ml** model from eaither **Jupiter Notebook** or **Google Colab**. 
+
+
+## Table of contents
+
+* [Installation](#Installation)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Endpoints](#Endpoints)
 
 <!-- ### Project Support Features
 * Users can signup and login to their accounts
 * Public (non-authenticated) users can access all causes on the platform
 * Authenticated users can access all causes as well as create a new cause, edit their created cause and also delete what they've created. -->
 
-### Installation Guide
+### System requirements
+
+To run this project on your machine you need a linux operating system.
+
+### Installation
 
 Clone this repository
 
@@ -40,18 +52,20 @@ Start the server
 <!-- * Run npm start:dev to start the application.
 * Connect to the API using Postman on port 7066. -->
 
-### API Endpoints
+### Endpoints
 
-| HTTP Verbs | Endpoints             | Action                |
-| ---------- | --------------------- | --------------------- |
-| POST       | /api/model/irrigation | To predict irrigation |
-| POST       | /api/model/radiation  | To predict radiaion   |
+| HTTP Verbs | Endpoints               | Action                |
+| ---------- | ----------------------- | --------------------- |
+| `POST`     | `/api/model/irrigation` | To predict irrigation |
+| `POST`     | `/api/model/radiation`  | To predict radiaion   |
 
 ### Technologies Used
 
 - [Flask](https://nodejs.org/) is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.
 - [Gunicorn](https://gunicorn.org/) The Gunicorn "Green Unicorn" is a Python Web Server Gateway Interface HTTP server. It is a pre-fork worker model, ported from Ruby's Unicorn project.
 - [scikit-learn](https://scikit-learn.org/stable/) Scikit-learn is a free software machine learning library for the Python programming language.
+
+- [tensorflow-cpu 2.10.0](https://pypi.org/project/tensorflow-cpu/) TensorFlow is an open source software library for high performance numerical computation. Its flexible architecture allows easy deployment of computation across a variety of platforms (CPUs, GPUs, TPUs), and from desktops to clusters of servers to mobile and edge devices.
 
   <!-- ### Authors
   - [Black Developa](https://github.com/blackdevelopa)

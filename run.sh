@@ -1,12 +1,31 @@
 #!/bin/sh
 
-a=0
-while [ "$a" -lt 10 ]; do # this is loop1
-    b="$a"
-    while [ "$b" -ge 0 ]; do # this is loop2
-        echo -n "$b "
-        b=$(expr $b - 1)
-    done
-    echo
-    a=$(expr $a + 1)
-done
+echo "Create an environment...."
+python3 -m venv eflask
+echo "Done!"
+
+echo "Activating environment....."
+. eflask/bin/activate
+echo "Done!"
+
+echo "Installing all required dependencies....."
+pip install flask
+
+pip install pandas
+
+pip install numpy
+
+pip install sklearn
+
+pip install gunicorn
+
+pip install flask-cors
+
+pip install keras
+
+pip install tensorflow-cpu
+
+echo "Done!"
+
+echo "Starting server..."
+gunicorn wsgi:app
