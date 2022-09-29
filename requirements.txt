@@ -5,4 +5,4 @@ sklearn
 gunicorn
 flask-cors
 keras
-tensorflow
+tensorflow-cpu
