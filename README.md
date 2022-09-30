@@ -2,7 +2,7 @@
 
 ### Introduction
 
-UJ WRP Machine Learning Hub 2022 is an open source api that enable students to deploy their machine learning models for thier capstone projects. The perpose of this repository is to allow each team to add their saved **ml** model from eaither **Jupiter Notebook** or **Google Colab**. This api makes it possible for the students to intergrate their **ml** model with their **NodeJs** or **Javascript** web app, they can use **Axios** a Javascript library used to make HTTP requests from node. js or XMLHttpRequests from the browser and it supports the Promise API that is native to JS ES6.
+UJ WRP Machine Learning Hub 2022 is an open source api that enable students to deploy their machine learning models for thier capstone projects. The perpose of this repository is to allow each team to add their saved **ml** model from eaither **Jupiter Notebook** or **Google Colab**. This api makes it possible for the students to intergrate their **ml** model with their **NodeJs** or **Javascript** web app, they can use **Axios** a Javascript library used to make HTTP requests from node. js or XMLHttpRequests from the browser and it supports the Promise API that is native to JS ES6. The teams can save their **ml** model using **Pickle5** on **Jupiter Notebook** or **Google Colab** and than upload the saved file on this repository for deployment.
 
 ## Reason for this project
 
