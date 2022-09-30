@@ -4,8 +4,7 @@
 
 UJ WRP Machine Learning Hub 2022 is an open source api that enable students to deploy their machine learning models for thier capstone projects. The perpose of this repository is to allow each team to add their saved **ml** model from eaither **Jupiter Notebook** or **Google Colab**. This api makes it possible for the students to intergrate their **ml** model with their **NodeJs** or **Javascript** web app, they can use **Axios** a Javascript library used to make HTTP requests from node. js or XMLHttpRequests from the browser and it supports the Promise API that is native to JS ES6.
 
-
-## Reason
+## Reason why this project for this project
 
 > :warning: The prefered operating system to run this project locally is **Linux** and not **Windows**, because **Pickle5** which is used to save and load any **ml** model inside a **Python** invironment does not install on **Windows** 10/11 we were having issues hence we came up with this alternative to help the students deploy their **ml** model.
 
@@ -16,14 +15,9 @@ UJ WRP Machine Learning Hub 2022 is an open source api that enable students to d
 - [Endpoints](#Endpoints)
 - [Authors](#authors)
 
-<!-- ### Project Support Features
-* Users can signup and login to their accounts
-* Public (non-authenticated) users can access all causes on the platform
-* Authenticated users can access all causes as well as create a new cause, edit their created cause and also delete what they've created. -->
-
 ### System requirements
 
-To run this project on your machine you need a linux operating system.
+To run this project on your machine you need a **Linux** operating system.
 
 ### Installation
 
@@ -53,12 +47,6 @@ Start the server
 
 ### Endpoints
 
-<!--
-| HTTP Verbs | Endpoints               | FormData fields | Action                              |
-| ---------- | ----------------------- | --------------- | ----------------------------------- |
-| `POST`     | `/api/model/irrigation` |                 | content to be added by team members |
-| `POST`     | `/api/model/radiation`  |                 | content to be added by team members | -->
-
 <table>
     <tr>
       <td> HTTP Verbs </td>
@@ -86,10 +74,10 @@ Start the server
   </td>
 
   <td>
-  Content to be added...
+    Predicts whether to Irrigate or Not irrigate
   </td>
    <td>
-  Content to be added...
+  capstone-group-1
   </td>
 </tr>
 
@@ -115,7 +103,7 @@ Start the server
   Content to be added...
   </td>
    <td>
-  Content to be added...
+  capstone-group-7
   </td>
 </tr>
 </table>
