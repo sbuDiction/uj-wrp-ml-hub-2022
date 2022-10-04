@@ -18,7 +18,7 @@ test_model_filename = './ml_models/test_model.sav'
 # load models using pickle
 loaded_model_irrigation = pickle.load(open(irrigation_model_filename, 'rb'))
 loaded_model_radiation = pickle.load(open(radiation_model_filename, 'rb'))
-loaded_model_test - pickle.load(open(test_model_filename, 'rb'))
+loaded_model_test = pickle.load(open(test_model_filename, 'rb'))
 
 
 @app.route("/")
